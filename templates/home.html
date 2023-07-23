@@ -1,0 +1,30 @@
+{% extends 'base.html'%} 
+
+
+
+{% block content %}
+{% load i18n %}
+ <!-- Destination Start -->
+ <div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+           
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">{% trans 'Manzillar' %}</h6>
+            <h1>{% trans 'Top darajadagi manzillar' %}</h1>
+        </div>
+        <div class="row">
+            {% for item in dests %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img style="height: 300px; width: 100%;" class="img-fluid" src="{{ item.img1.url }}" alt="{{ item.country }}">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">{{ item.country }}</h5>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Destination Start -->
+{% endblock content %}
